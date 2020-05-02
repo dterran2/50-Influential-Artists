@@ -208,9 +208,30 @@ const artists = [
 (1) Name of the first artist in the array
 (2) Bio of the third artist in the array */
 
+function indexSearch(artists, id){
+  let newArray = [];
+for(var i = id; i < artists.length; i++){
+  let thing = artists[i];
+  newArray.push(thing.name)
+  return newArray;
+  }
+}
+
+  function indexSearch(artists, id){
+    let newArray = [];
+  for(var i = id; i < artists.length; i++){
+    let thing = artists[i];
+    newArray.push(thing.bio)
+    return newArray;
+    }
+  }
 
 
-/* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+
+/* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() 
+to check your work. */
+
+artists[0].name = "Vincent Van Gogh";
 
 
 
@@ -222,9 +243,10 @@ const artists = [
  * For example, if getArtistByIndex is invoked with the inventory and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(id, name) {
-    /* code here */
-  }
+function getArtistByIndex(array, id) {
+  return `The artist at index ${id} is ${indexSearch(array, id)}`;
+}
+
   
   /**
 
@@ -237,8 +259,8 @@ function getArtistByIndex(id, name) {
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset.
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(artists, id) {
+  let removed = artists.splice(id,1);
   }
   
   /**
@@ -246,14 +268,22 @@ function removeArtist(/*code here*/) {
 
 /* Task 5: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
-function lotsOfArt(/* Code here */){
-
-    /* Code here */
-
+function lotsOfArt(artists){
+  let newArray = [];
+  for(var i = 0; i < artists.length; i++){
+    if(artists.paintings >= 100){
+      newArray.push(artists.name);
+    }
+    return newArray;
+    }
   }
+    
+
+  
 
 
-/* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
+/* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. 
+Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
 
 id: 21
 name: Your Name Here, 
@@ -262,10 +292,18 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
-function addArtist(/* Code here */){
+let newArtists = {
+  id: 20,
+  name: 'Donavan', 
+  years: "1991",
+  genre: "Web Design", 
+  nationality: 'American',
+  bio:  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys'};
 
-    /* Code here */
 
+function addArtist(array){
+  artists.push(array);
+    
   }
 
 
