@@ -78,12 +78,12 @@
       }
 
       }
-    .headButton{
-        padding: 10px 15px;
-        font-size: 20px;
-        border: black solid 2px;
-        background-color: white;
-        color:black;
+    .headButton(@padding, @font-size, @border, @background-color, @color){
+        padding: @padding;
+        font-size: @font-size;
+        border: @border;
+        background-color: @background-color;
+        color: @color;
 
         @media @tablet{
             font-size: 20px;
